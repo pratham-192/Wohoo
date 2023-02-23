@@ -4,7 +4,8 @@ const passport=require('passport');
 
 const userController=require('../controllers/user_controller');
 //when user is signed in then only profile page is visible
-router.get('/profile',passport.checkAuthentication,userController.profile)
+router.get('/profile/:id',passport.checkAuthentication,userController.profile)
+router.post('/update/:id',passport.checkAuthentication,userController.update)
 
 router.get('/Sign-In',userController.signIn);
 router.get('/Sign-Up',userController.signUp);
