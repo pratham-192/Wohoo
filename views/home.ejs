@@ -1,29 +1,32 @@
-<h1>
+<link rel="stylesheet" href="/css/home.css">
+<!-- <h1>
     <%= title %>
-</h1>
-<section>
-    <h4>Posts</h4>
-    <%if(locals.user){%>
-        <form action="/posts/create" id="new-post-form" method="post">
-            <textarea name="content" cols="30" rows="3" placeholder="Type here......"></textarea>
-            <input type="submit" value="post">
-        </form>
-        <%}%>
-            <div id="posts-list-container">
-                <ul>
-                    <% for(post of posts){%>
-                        <%- include('_post') %>
-                        <%} %>
-                </ul>
-            </div>
-</section>
-<section id="user-friends">
-     <h4>Friends</h4>
-     <ul>
-         <% for(u of all_users){%>
-            <li>
-                <a href="/users/profile/<%=u.id%>"><%=u.name%></a>
-            </li>
-         <%} %>
-     </ul>
-</section>
+</h1> -->
+<div id="home-container">
+    <section id="feed-posts">
+        <h4>Posts</h4>
+        <%if(locals.user){%>
+            <form action="/posts/create" id="new-post-form" method="post">
+                <textarea name="content" cols="30" rows="3" placeholder="Type here......"></textarea>
+                <input type="submit" value="post">
+            </form>
+            <%}%>
+                <div id="posts-list-container">
+                    <ul>
+                        <% for(post of posts){%>
+                            <%- include('_post') %>
+                            <%} %>
+                    </ul>
+                </div>
+    </section>
+    <section id="user-friends">
+         <h4>Friends</h4>
+         <ul>
+             <% for(u of all_users){%>
+                <li>
+                    <a href="/users/profile/<%=u.id%>"><%=u.name%></a>
+                </li>
+             <%} %>
+         </ul>
+    </section>
+</div>
