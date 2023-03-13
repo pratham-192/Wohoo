@@ -12,6 +12,8 @@ const passportLocal=require('./config/passport-local-strategy');
 //to manage if the user is signed in and we restart the server then also the user is signed in
 const MongoStore=require('connect-mongo');
 const saasMiddleware=require('node-sass-middleware');
+const flash= require('connect-flash');
+const customMware=require('./config/middleware');
 
 //saas must be loaded before the server's middleware's fire up because it is finally becoming CSS
 //(for increasing speed of website)
@@ -63,6 +65,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 //set the authenticated user in the locals of views
 app.use(passport.setAuthenticatedUser);
+
+//Connect-flash needs express-session and cookie-parser middleware to be able to store flash messages
+app.use(flash());
+//custom middleware is used to put flash messages from request to response(locals)
+app.use(customMware.setFlash);
 // use express router
 app.use('/', require('./routes'));
 

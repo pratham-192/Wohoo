@@ -1,23 +1,30 @@
 <html>
-    <head>
-        <title>
-            <%= title %>
-        </title>
-        <link rel="stylesheet" href="/css/layout.css">
-        <link rel="stylesheet" href="/css/header.css">
-        <link rel="stylesheet" href="/css/footer.css">
-        <%-style%>
-    </head>
-    <body>
-        <%- include('_header'); %>
 
-        <!-- variable part which is same for every page -->
-         <!--body is defined by the library for specifying the location of body-part -->
-         <main id="layout-main">
-            <%- body %>
-        </main>
-        <%- include('_footer'); %>
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <%-style%>
+</head>
 
-        <%-script%>
-    </body>
+<body>
+    <%- include('_header'); %>
+        <% if(flash.success && flash.success.length>0){%>
+            <h5>
+                <%= flash.success %>
+            </h5>
+            <%} %>
+                <!-- variable part which is same for every page -->
+                <!--body is defined by the library for specifying the location of body-part -->
+                <main id="layout-main">
+                    <%- body %>
+                </main>
+                <%- include('_footer'); %>
+
+                    <%-script%>
+</body>
+
 </html>
