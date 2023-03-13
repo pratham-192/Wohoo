@@ -33,12 +33,12 @@ module.exports.create = async function (req, res) {
             });
             post.comments.push(comment);
             post.save();
-
+            req.flash('success','comment added');
             res.redirect('/');
         }
     } catch (err) {
-        console.log("error", err);
-        return;
+        req.flash('error',err);
+        return res.redirect('back');
     }
 }
 // module.exports.destroy = function (req, res) {
@@ -67,8 +67,10 @@ module.exports.destroy =async function (req, res) {
         comment.remove();
 
         let post=Post.findByIdAndUpdate(postId, { $pull: { comments: req.params.id } });
+        req.flash('success','comment deleted');
         return res.redirect('back');
     } else {
+        req.flash('error','You are not authorised to delete this comment');
         return res.redirect('back');
     }
 }
