@@ -95,7 +95,7 @@
     let convertPostsToAjax = function () {
         $('#posts-list-container>ul>li').each(function () {
             let self = $(this);
-            // console.log("dsafsd");
+            console.log("dsafsd");
             let deleteButton = $(' .delete-post-button', self);
             deletePost(deleteButton);
 
