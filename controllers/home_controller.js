@@ -24,7 +24,7 @@ const User = require('../models/user');
 module.exports.home = async function (req, res) {
     try {
         let posts = await Post.find({})
-            .sort('-createdAt')
+            // .sort('-createdAt')
             .populate('user')
             .populate({
                 path: 'comments',
@@ -32,6 +32,8 @@ module.exports.home = async function (req, res) {
                     path: 'user'
                 }
             })
+            .sort({'createdAt':'desc' })
+            
         let users = await User.find({});
         return res.render('home', {
             title: "Wohoo | Home",

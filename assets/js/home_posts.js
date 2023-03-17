@@ -10,7 +10,7 @@
                 url: '/posts/create',
                 data: newPostForm.serialize(),
                 success: function (data) {
-                    // console.log(data);
+                    console.log(data);
                     //manually reseting the form data(bcoz of ajax)
                     $('#new-post-form')[0].reset();
                     
@@ -19,7 +19,7 @@
                     deletePost($(' .delete-post-button', newPost));
 
                     // call the create comment class
-                    // new PostComments(data.data.post._id);
+                    new PostComments(data.data.post._id);
 
                     new Noty({
                         theme: 'relax',
@@ -95,13 +95,13 @@
     let convertPostsToAjax = function () {
         $('#posts-list-container>ul>li').each(function () {
             let self = $(this);
-            console.log("dsafsd");
+            // console.log("dsafsd");
             let deleteButton = $(' .delete-post-button', self);
             deletePost(deleteButton);
 
             // get the post's id by splitting the id attribute
             let postId = self.prop('id').split("-")[1]
-            // new PostComments(postId);
+            new PostComments(postId);
         });
     }
 
