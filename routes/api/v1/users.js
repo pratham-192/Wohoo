@@ -1,5 +1,6 @@
 const express=require('express');//fetch the already present instance of express
 const router=express.Router();
-router.use('/posts',require('./posts'));
-router.use('/users',require('./users'));
+const usersApi=require('../../../controllers/api/v1/users_api')
+router.post('/create-session',usersApi.createSession);
+
 module.exports=router;
