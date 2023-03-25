@@ -11,6 +11,12 @@ router.get('/Sign-In',userController.signIn);
 router.get('/Sign-Up',userController.signUp);
 router.post('/create',userController.create);
 router.get('/sign-out',userController.DestroySession);
+
+
+router.get('/auth/google',passport.authenticate('google',{scope:['profile','email']}));
+router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/users/Sign-In'}),userController.createSession)
+
+
 //use passport as a middleware to authenticate
 router.post('/createSession',passport.authenticate(
     'local',//local passport session is used

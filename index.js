@@ -10,6 +10,9 @@ const session=require('express-session');
 const passport=require('passport');
 const passportLocal=require('./config/passport-local-strategy');
 const passportJWT=require('./config/passport-jwt-strategy');
+const passportGoogle=require('./config/passport-google-oauth2-strategy');
+
+
 //to manage if the user is signed in and we restart the server then also the user is signed in
 const MongoStore=require('connect-mongo');
 const saasMiddleware=require('node-sass-middleware');
