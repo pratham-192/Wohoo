@@ -17,6 +17,12 @@ router.get('/auth/google',passport.authenticate('google',{scope:['profile','emai
 router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'/users/Sign-In'}),userController.createSession)
 
 
+router.get('/reset-password', userController.resetPassword);
+router.post('/send-reset-pass-mail', userController.resetPassMail);
+
+router.get('/reset-password/:accessToken', userController.setPassword);
+router.post('/update-password/:accessToken', userController.updatePassword);
+
 //use passport as a middleware to authenticate
 router.post('/createSession',passport.authenticate(
     'local',//local passport session is used
