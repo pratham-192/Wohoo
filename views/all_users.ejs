@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/friends.css">
+
+<div>
+    <h2 class="page-heading">Users</h2>
+</div>
+<% if(all_users.length>0){ %>
+<div class="friend-container">
+    <% for(u of all_users){%>
+        <% if(!locals.user || u.id!=locals.user.id){ %>
+        <div class="friend">
+            <%if(u.avatar){%>
+
+                <img src="<%=u.avatar%>" alt="<%= u.name %>">
+            <%}else{%>
+                <img src="/images/default_pic.jpg" alt="default profile picture">
+                <% } %>
+          <a href="/users/profile/<%=u._id%>">
+            <h3><%=u.name%></h3>
+        </a >
+          <!-- <button class="delete-button">ADD</button> -->
+          <form action="/friends/create-friend/<%=u._id%>" method="post" >
+            <button type="submit" class="delete-button" name="add-friend">Add Friend</button>
+        </form>
+        </div>
+        <% } %>
+     <%} %>
+  </div>
+<%}else{%>
+    <h3>Sorry! No Users Found</h3>
+    <%}%>
+

@@ -1,0 +1,28 @@
+    <link rel="stylesheet" href="/css/friends.css">
+    <div>
+        <h1 class="page-heading">Friends</h1>
+    </div>
+        <% if(friends.length>0){ %>
+        <div class="friend-container">
+            <% for(u of friends){%>
+                <div class="friend">
+                    <%if(u.avatar){%>
+
+                        <img src="<%=u.avatar%>" alt="<%= u.name %>">
+                    <%}else{%>
+                        <img src="/images/default_pic.jpg" alt="default profile picture">
+                        <% } %>
+                  <a href="/users/profile/<%=u._id%>">
+                    <h3><%=u.name%></h3>
+                </a>
+                <a href="/friends/delete-friend/<%=u.id%>">
+                    <button class="delete-button">Delete</button>
+                </a>
+                </div>
+             <%} %>
+          </div>
+        <%}else{%>
+            <h2 id="no-friends">Hey! Make some friends</h2>
+            <%}%>
+
+        

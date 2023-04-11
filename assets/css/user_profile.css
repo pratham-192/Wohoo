@@ -1,2 +1,80 @@
 body {
-  background: lightgray; }
+  background-color: #008080;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.profile {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 50px auto;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.profile img {
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
+}
+
+.profile h2 {
+  color: #008080;
+  font-size: 28px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.profile p {
+  color: #666;
+  font-size: 16px;
+  margin-top: 0;
+  text-align: center;
+}
+
+form {
+  margin: 20px auto;
+max-width: 400px;
+}
+
+label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="file"] {
+  border: 2px solid #008080;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom:10px;
+}
+
+input[type="submit"] {
+  background-color: #008080;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  width: 70%;
+  margin-left:4rem;
+  margin-top:4%
+}
+
+input[type="submit"]:hover {
+  background-color: #006666;
+  cursor: pointer;
+}
+
+input[type="text"]::placeholder{
+  opacity: 0.5;
+}

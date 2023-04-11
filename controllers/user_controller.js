@@ -228,3 +228,10 @@ module.exports.updatePassword = function(req, res)
         }
     });
 }
+module.exports.all_users=async function(req,res){
+    let allUsers=await User.find({});
+    return res.render('all_users',{
+        title:allUsers,
+        all_users:allUsers
+    })
+}
