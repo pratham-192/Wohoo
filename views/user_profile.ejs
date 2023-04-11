@@ -23,12 +23,12 @@
             <p><%=profile_user.email%></p>
         <form action="/users/update/<%=profile_user.id%>" enctype="multipart/form-data" method="post">
           <label for="name">Name:</label>
-          <input type="text" id="name" class="val" name="name" placeholder="<%=profile_user.name%>" onclick="putvalue(this)" required>
+          <input type="text" id="name" class="val" name="name" placeholder="<%=profile_user.name%>" onclick="putname(this)" required>
           <label for="email">Email:</label>
-          <input type="text" id="email" class="val" name="email" placeholder="<%=profile_user.email%>" onclick="putvalue(this)" required>
+          <input type="text" id="email" class="val" name="email" placeholder="<%=profile_user.email%>" onclick="putemail(this)" required>
           <label for="profile-pic">Profile Picture:</label>
           <input type="file" id="profile-pic" name="avatar" placeholder="Profile Picture" accept="image/*">
-          <input type="submit" value="Update Profile">
+          <input type="submit" value="Update Profile" onclick="validateForm(event)">
         </form>
       </div>
     <%}else{%>
@@ -44,9 +44,4 @@
             <p><%=profile_user.email%></p>
         </div>
         <%} %>
-
-        <script>
-            function putvalue(input){
-                input.value=input.placeholder;
-            }
-        </script>
+          <script src="/js/signup.js"></script>

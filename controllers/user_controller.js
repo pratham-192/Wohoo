@@ -44,6 +44,7 @@ module.exports.update=async function(req,res)
                     user.avatar=User.avatarPath+'/'+req.file.filename;
                 }
                 user.save();
+                req.flash('success','Profile updated');
                 return res.redirect('back');
         })
         }catch(err){
@@ -231,7 +232,7 @@ module.exports.updatePassword = function(req, res)
 module.exports.all_users=async function(req,res){
     let allUsers=await User.find({});
     return res.render('all_users',{
-        title:allUsers,
+        title:'Users',
         all_users:allUsers
     })
 }
