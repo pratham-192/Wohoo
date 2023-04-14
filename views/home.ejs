@@ -1,25 +1,29 @@
 <link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/user_sidebar.css">
+<link rel="stylesheet" href="/css/feed-post.css">
 <!-- <h1>
     <%= title %>
 </h1> -->
 <div id="home-container">
-    <section id="feed-posts">
+    <div id="feed-posts">
         <h4>Posts</h4>
         <%if(locals.user){%>
-            <form action="/posts/create" id="new-post-form" method="post">
-                <textarea name="content" cols="30" rows="3" placeholder="Type here......" required></textarea>
-                <input type="submit" value="post">
-            </form>
+            <div class="post-form">
+                <form action="/posts/create" id="new-post-form" method="post">
+                    <label for="post">Post:</label>
+                    <input type="text" name="content" id="post" placeholder="Type here......" required>
+                    <!-- <input type="submit" value="post"> -->
+                    <button type="submit">Submit</button>
+                </form>
+
+            </div>
             <%}%>
                 <div id="posts-list-container">
-                    <ul>
                         <% for(post of posts){%>
                             <%- include('_post') %>
                             <%} %>
-                    </ul>
                 </div>
-    </section>
+            </div>
 
     <section id="total-users">
          <div class="user-sidebar">

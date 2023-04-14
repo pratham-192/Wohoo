@@ -1,24 +1,30 @@
-<li id="comment-<%= comment._id %>">
-    <p>
+<div id="comment-<%= comment._id %>" class="comment">
+    <div class="comment-header">
+        <h4 class="author"><%=comment.user.name%></h4>
+        <p class="time"><%= comment.createdAt %></p>
+    </div>
+    <p class="comment-content"><%= comment.content %></p>
+    
+    <div class="actions">
+        <%if(locals.user){%>
+            <p class="like-value" id="Like-<%=comment._id%>">
+                <%=comment.likes.length%>&nbsp
+            </p>
+            <a class="toggle-like-button" data-likes="<%=comment.likes.length%>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
+                
+                 <button class="like">Like</button>
+            </a>
+        <%}else{%>
+            <%=comment.likes.length%> likes
+        <%}%>
+        
         <% if (locals.user && locals.user.id==comment.user.id){ %>
-            <small>
-                <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">X</a>
-            </small>
+                <a class="delete-comment-button" href="/comments/destroy/<%= comment.id %>">
+                    <button class="delete">Delete</button>
+                </a>
             <% } %>
-        <%= comment.content %>
-            <br>
-            <small>
-                <%=comment.user.name%>
-            </small>
-            <br>
-            <small>
-                <%if(locals.user){%>
-                    <a class="toggle-like-button" data-likes="<%=comment.likes.length%>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
-                        <%=comment.likes.length%> likes
-                    </a>
-                <%}else{%>
-                    <%=comment.likes.length%> likes
-                <%}%>
-        </small>
-    </p>
-</li>
+    </div>
+    <hr>
+        
+                
+</div>

@@ -1,0 +1,248 @@
+#home-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#feed-posts {
+    /* max-width: 800px; */
+    margin: 0 auto;
+    padding: 20px;
+    width: 70%;
+}
+
+#total-users {
+    width: 30%;
+    padding: 10px;
+}
+
+/* Post container */
+#post-list-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid #008080;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Post form and comments form */
+.post-form form,
+.post form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
+/* Label for input fields */
+.post-form label,
+.post label {
+    display: block;
+    margin-bottom: 5px;
+    color: #008080;
+}
+
+/* Input fields */
+.post-form input[type="text"],
+.post input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Submit button */
+.post-form button[type="submit"],
+.post button[type="submit"] {
+    background-color: #008080;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Submit button on hover */
+.post-form button[type="submit"]:hover,
+.post button[type="submit"]:hover {
+    background-color: #006666;
+}
+
+/* Posts section */
+.post {
+    padding: 5px 20px 5px 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Post header */
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Post author and time */
+.post-header .author {
+    font-weight: bold;
+    color: #008080;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.post-header .time {
+    color: #999;
+    margin-right: 10px;
+}
+
+/* Post actions */
+.post-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* Post action buttons on hover */
+.post-actions button:hover {
+    background-color: #008080;
+    color: #fff;
+}
+.post-actions a{
+    margin-left: 4px;
+    margin-right: 10px;
+}
+/* Last post action button */
+.post-actions button:last-child {
+    margin-right: 0;
+}
+
+
+
+.post-content {
+    margin: 0 0px 10px 0px;
+}
+
+/* Comments section */
+.comments {
+    margin-top: 20px;
+}
+.comment-container{
+    max-height: 350px;
+    overflow:scroll;
+}
+/* Comment content */
+.comment {
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Comment author and time */
+.comment .author {
+    font-weight: bold;
+    color: #008080;
+    margin-right: 10px;
+}
+
+.comment .time {
+    color: #999;
+    margin-right: 10px;
+}
+.comment-header a{
+    margin-right: 5px;
+}
+.comment-content {
+    margin: 0px 0px 10px 0px;
+}
+
+/* Comment actions */
+.comment .actions {
+    display: flex;
+    align-items: center;
+}
+.actions a{
+    margin-left: 4px;
+    margin-right: 10px;
+}
+
+/* Comment action buttons on hover */
+.comment .actions button:hover {
+    background-color: #008080;
+    color: #fff;
+}
+
+/* Last comment action button */
+.comment .actions button:last-child {
+    margin-right: 0;
+}
+
+/* Add spacing between posts and comments */
+.post:not(:last-child),
+.comment:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* Post like and delete buttons */
+.post-actions .like,
+.post-actions .delete {
+    background-color: #f7f7f7;
+    color: #008080;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Post like and delete buttons on hover */
+.post-actions .like:hover,
+.post-actions .delete:hover {
+    background-color: #008080;
+    color: #fff;
+}
+
+/* Comment like and delete buttons */
+.comment .actions .like,
+.comment .actions .delete {
+    background-color: #f7f7f7;
+    color: #008080;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Comment like and delete buttons on hover */
+.comment .actions .like:hover,
+.comment .actions .delete:hover {
+    background-color: #008080;
+    color: #fff;
+}
+
+/* Last like or delete button */
+.post-actions .like:last-child,
+.post-actions .delete:last-child,
+.comment .actions .like:last-child,
+.comment .actions .delete:last-child {
+    margin-right: 0;
+}
+
+.like-value{
+    color: #999;
+    font-size: 0.9rem;
+}

@@ -57,6 +57,7 @@ module.exports.toggleLike = async function(req, res)
             message: "Request successful!",
             data: 
             {
+                LikeId:req.query.id,
                 deleted: deleted
             }
         });
