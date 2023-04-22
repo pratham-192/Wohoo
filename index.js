@@ -19,6 +19,12 @@ const saasMiddleware=require('node-sass-middleware');
 const flash= require('connect-flash');
 const customMware=require('./config/middleware');
 
+// setup the chat server to be used with socket.io
+// const chatServer = require('http').Server(app);
+// const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+// chatServer.listen(8000);
+// console.log('chat server is listening on port 8000');
+
 //saas must be loaded before the server's middleware's fire up because it is finally becoming CSS
 //(for increasing speed of website)
 app.use(saasMiddleware({

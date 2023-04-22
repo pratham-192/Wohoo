@@ -42,6 +42,9 @@
                 <% } %>
             <h2><%=profile_user.name%></h2>
             <p><%=profile_user.email%></p>
+            <form action="/friends/create-friend/<%=profile_user._id%>" method="post" >
+                <button type="submit" class="delete-button" name="add-friend">Add Friend</button>
+            </form>
         </div>
         <%} %>
           <script src="/js/signup.js"></script>

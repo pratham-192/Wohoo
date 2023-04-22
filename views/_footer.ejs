@@ -1,4 +1,4 @@
-<footer id="layout-footer">
+<!-- <footer id="layout-footer">
     <div>
         <p>
             &#169; Pratham Mehtani. All Rights Reserved
@@ -19,4 +19,36 @@
             </ul>
         </nav>
     </div>
-</footer>
+</footer> -->
+
+
+<header id="layout-header">
+    <nav>
+        <div class="head">
+
+                    <!-- <a href='/' class="mini-logo"> -->
+                        &#169; Pratham Mehtani. All Rights Reserved
+                    <!-- </a> -->
+
+            <div class="auth-links">
+                <nav id="header-items">
+                    <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <% if(locals.user){%>
+                                    <a href="/users/profile/<%=user.id%>">Profile</a>
+                                <%} %>
+                            </li>
+    
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+</header>

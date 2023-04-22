@@ -3,7 +3,7 @@
 
     <div class="post-header">
         <h3 class="author">
-            <%= post.user.name %>
+            <a href="/users/profile/<%=post.user.id%>"><%= post.user.name %></a>
         </h3>
         <p class="time">
             <%= post.createdAt %>

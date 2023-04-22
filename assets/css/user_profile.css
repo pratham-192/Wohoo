@@ -78,3 +78,20 @@ input[type="submit"]:hover {
 input[type="text"]::placeholder{
   opacity: 0.5;
 }
+.delete-button {
+  display: block;
+  margin: 10px auto 0;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}

@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="/css/home.css">
 <link rel="stylesheet" href="/css/user_sidebar.css">
 <link rel="stylesheet" href="/css/feed-post.css">
+<link rel="stylesheet" href="/css/chat_box.css">
+
 <!-- <h1>
     <%= title %>
 </h1> -->
@@ -51,6 +53,7 @@
           </div>
     </section>
 </div>
+<!-- <%- include('_chat_box') %> -->
 <!-- importing this script for creating the comments -->
 <script src="/js/home_post_comments.js" ></script>
 <script src="/js/home_posts.js"></script>
@@ -62,3 +65,11 @@
         let toggleLike = new ToggleLike(self);
     });
 </script>
+<!-- chat engine code -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+<script src="/js/chat_engine.js"></script>
+<%if(locals.user){%>
+    <script>
+        new ChatEngine('user-chat-box','<%=locals.user.email%>');
+    </script>
+<%}%> -->

@@ -87,7 +87,8 @@
 }
 
 /* Post author and time */
-.post-header .author {
+.post-header .author a{
+    text-decoration: none;
     font-weight: bold;
     color: #008080;
     margin-right: 10px;
@@ -150,7 +151,8 @@
 }
 
 /* Comment author and time */
-.comment .author {
+.comment .author a{
+    text-decoration: none;
     font-weight: bold;
     color: #008080;
     margin-right: 10px;

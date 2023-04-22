@@ -1,6 +1,8 @@
 <div id="comment-<%= comment._id %>" class="comment">
     <div class="comment-header">
-        <h4 class="author"><%=comment.user.name%></h4>
+        <h4 class="author">
+            <a href="/users/profile/<%=comment.user.id%>"><%=comment.user.name%></a>
+            </h4>
         <p class="time"><%= comment.createdAt %></p>
     </div>
     <p class="comment-content"><%= comment.content %></p>
@@ -15,7 +17,10 @@
                  <button class="like">Like</button>
             </a>
         <%}else{%>
-            <%=comment.likes.length%> likes
+            <p class="like-value">
+                <%=comment.likes.length%>&nbspLikes
+            </p>
+
         <%}%>
         
         <% if (locals.user && locals.user.id==comment.user.id){ %>
