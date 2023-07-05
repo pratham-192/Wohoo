@@ -10,8 +10,8 @@ const development={
         port: 587,//TLS configuration(high security)
         secure: false, // true for 465, false for other ports
         auth: {
-            user: 'major.pouros92@ethereal.email',
-            pass: 'UBZ1nZJqYkEGqBkgXP'
+            user: 'zetta.price35@ethereal.email',
+            pass: 'WrRGz9cEWEHDq8zagb'
         }
     },
     google_client_id:"43668741954-7hkrfaoger6r1v8n0i1f8gqm62fevj65.apps.googleusercontent.com",
