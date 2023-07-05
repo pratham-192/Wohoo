@@ -85,12 +85,11 @@ module.exports.signUp=function(req,res)
 //get the sign up data
 module.exports.create=function(req,res)
 {
-     console.log(req.body);
     if(req.body.password!=req.body.confirmpassword)
     {
         return res.redirect('back');
     }
-    User.findOne({user_id:req.body.user_id},function(err,user){
+    User.findOne({email:req.body.email},function(err,user){
         if(err){console.log("Error in finding the user signing up");
         return;}
         if(!user)
