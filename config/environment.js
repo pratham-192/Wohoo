@@ -15,7 +15,7 @@ const development={
     },
     google_client_id:"43668741954-7hkrfaoger6r1v8n0i1f8gqm62fevj65.apps.googleusercontent.com",
     google_client_secret:"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",
-    google_callback_url:"http://localhost:80/users/auth/google/callback",
+    google_callback_url:"https://wohoo.onrender.com/users/auth/google/callback",
     jwt_secret:'wohoo'
 }
 const production={
