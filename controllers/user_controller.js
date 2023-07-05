@@ -4,6 +4,7 @@ const path=require('path');
 const crypto = require('crypto');
 const queue = require('../config/kue');
 const userEmailWorker = require('../workers/user_email_worker');
+const resetPasswordMailer = require('../mailers/reset_password_mailer');
 module.exports.profile = function(req, res){
     User.findById(req.params.id,function(err,user)
     {
@@ -151,15 +152,15 @@ module.exports.resetPassMail = function(req, res)
                 user.save();
             }
 
-            let job = queue.create('user-emails', user).save(function(err)
-            {
-                if(err)
-                {
-                    console.log('Error in sending to the queue', err);
-                    return;
-                }
-            });
-
+            // let job = queue.create('user-emails', user).save(function(err)
+            // {
+            //     if(err)
+            //     {
+            //         console.log('Error in sending to the queue', err);
+            //         return;
+            //     }
+            // });
+            resetPasswordMailer.resetPassword(user);
             req.flash('success', 'Password reset link sent. Please check your mail');
             return res.redirect('/');
         }
