@@ -2,7 +2,7 @@ const Comment = require('../models/comment');
 const Post = require('../models/post');
 const commentsMailer=require('../mailers/comments_mailer');
 const commentEmailWorker=require('../workers/comment_email_worker');
-const queue=require('../config/kue');
+// const queue=require('../config/kue');
 const Like = require('../models/like');
 // module.exports.create =function(req, res){
 //     Post.findById(req.body.post, function(err, post){
@@ -46,13 +46,14 @@ module.exports.create = async function (req, res) {
             //         return;
             //     }
             // })
-            let job=queue.create('emails',comment).save(function(err){
-                if(err){
-                            console.log('error in creating a queue',err);
-                            return;
-                        }
-                        console.log("job enqueued",job.id);
-            })
+            // let job=queue.create('emails',comment).save(function(err){
+            //     if(err){
+            //                 console.log('error in creating a queue',err);
+            //                 return;
+            //             }
+            //             console.log("job enqueued",job.id);
+            // })
+            commentsMailer.newComment(comment);
             if (req.xhr){
                 
     
