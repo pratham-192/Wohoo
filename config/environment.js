@@ -4,13 +4,14 @@ const development={
     session_cookie_key:'something',
     db:'development_db',
     smtp:{
-        service: 'gmail',
+        // service: 'gmail',
         //this is fake SMTP server and to use google server this can be done during deployement
+        host: "smtp.ethereal.email",
         port: 587,//TLS configuration(high security)
         secure: false, // true for 465, false for other ports
         auth: {
-            user: "prathammehtani23@gmail.com",
-            pass: "zmshzjkezkkjdsdp"
+            user: 'major.pouros92@ethereal.email',
+            pass: 'UBZ1nZJqYkEGqBkgXP'
         }
     },
     google_client_id:"43668741954-7hkrfaoger6r1v8n0i1f8gqm62fevj65.apps.googleusercontent.com",
