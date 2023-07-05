@@ -7,7 +7,7 @@ const User=require('../models/user');
 passport.use(new googleStrategy({
     clientID:"43668741954-7hkrfaoger6r1v8n0i1f8gqm62fevj65.apps.googleusercontent.com",
     clientSecret:"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",
-    callbackURL:"http://localhost:80/users/auth/google/callback"
+    callbackURL:"https://wohoo.onrender.com/users/auth/google/callback"
 },function(accessToken,refreshToken,profile,done){
     //find the user
     User.findOne({email:profile.emails[0].value}).exec(function(err,user){
